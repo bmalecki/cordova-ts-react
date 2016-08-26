@@ -1,0 +1,8 @@
+node_modules/
+typings/
+.idea/
+platforms/
+plugins/
+*.swp
+.DS_Store
+Thumbs.db

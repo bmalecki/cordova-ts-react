@@ -1,0 +1,20 @@
+{
+  "globalDependencies": {
+    "chai": "registry:dt/chai#3.4.0+20160601211834",
+    "chai-enzyme": "registry:dt/chai-enzyme#0.5.0+20160705230117",
+    "enzyme": "registry:dt/enzyme#2.4.1+20160709041153",
+    "mocha": "registry:dt/mocha#2.2.5+20160720003353",
+    "react": "registry:dt/react#0.14.0+20160817201227",
+    "react-dom": "registry:dt/react-dom#0.14.0+20160412154040",
+    "react-redux": "registry:dt/react-redux#4.4.0+20160724070751",
+    "react-router": "registry:dt/react-router#2.0.0+20160813233016",
+    "react-router-redux": "registry:dt/react-router-redux#4.0.0+20160724070902",
+    "react-router/history": "registry:dt/react-router/history#2.0.0+20160608102730",
+    "redux": "registry:dt/redux#3.5.2+20160703092728",
+    "redux-thunk": "registry:dt/redux-thunk#2.1.0+20160703120921",
+    "require": "registry:dt/require#2.1.20+20160316155526",
+    "sinon": "registry:dt/sinon#1.16.0+20160517064723",
+    "sinon-chai": "registry:dt/sinon-chai#2.7.0+20160317120654"
+  },
+  "dependencies": {}
+}
