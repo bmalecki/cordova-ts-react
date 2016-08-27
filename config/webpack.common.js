@@ -79,7 +79,13 @@ module.exports = {
     }),
 
     new HtmlWebpackPlugin({
-      template: 'src/index.html'
+      template: 'src/index.ejs',
+      minify: {
+        preserveLineBreaks: true,
+        collapseWhitespace: true,
+        removeComments: true,
+        removeAttributeQuotes: true,
+      }
     })   
   ]
 };

@@ -11,12 +11,16 @@ import {syncHistoryWithStore, routerMiddleware} from 'react-router-redux';
 import configureStore from './store/configureStore';
 import {App} from './components/App';
 
-
+declare var process : any
 class MyApp {
   initialize() {
     this.bindEvents();
 
     require('./style/app.scss');
+
+    if (process.env.NODE_ENV !== 'production') {
+      require('raw!./index.ejs')
+    }
 
     //apply middleware in array
     const store = configureStore([

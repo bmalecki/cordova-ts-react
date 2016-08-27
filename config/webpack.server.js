@@ -22,7 +22,7 @@ app.use(webpackDevMiddleware(compiler, { noInfo: true, publicPath: config.output
 app.use(webpackHotMiddleware(compiler));
 
 app.get('*',function(req, res) {
-  res.sendFile(helpers.root('src') + '/index.html')
+  res.sendFile(helpers.root('src') + '/index.ejs')
 });
 
 app.listen(port, function(error) {
