@@ -9,7 +9,7 @@ const helpers = require('./helpers');
 const ENV = process.env.NODE_ENV = process.env.ENV = 'production';
 
 module.exports =  webpackMerge(commonConfig, {
-  //devtool: 'source-map',
+  devtool: 'source-map',
 
   output: {
     path: helpers.root('www'),
@@ -38,14 +38,6 @@ module.exports =  webpackMerge(commonConfig, {
       'process.env.ENV': JSON.stringify(ENV)
     }),
 
-    new webpack.optimize.AggressiveMergingPlugin(),
-
-		/*new CompressionPlugin({
-			asset: "[path].gz[query]",
-			algorithm: "gzip",
-			test: /\.js$|\.html$/,
-			threshold: 10240,
-			minRatio: 0.8
-		})*/
+    new webpack.optimize.AggressiveMergingPlugin()
   ]
 });

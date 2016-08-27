@@ -2,6 +2,7 @@
   "globalDependencies": {
     "chai": "registry:dt/chai#3.4.0+20160601211834",
     "chai-enzyme": "registry:dt/chai-enzyme#0.5.0+20160705230117",
+    "cordova": "registry:dt/cordova#0.0.0+20160607055823",
     "enzyme": "registry:dt/enzyme#2.4.1+20160709041153",
     "mocha": "registry:dt/mocha#2.2.5+20160720003353",
     "react": "registry:dt/react#0.14.0+20160817201227",
