@@ -9,7 +9,7 @@ const {mount, shallow} = enzyme;
 const Test = () => <div className="test"/>;
 
 class Test2 extends React.Component<{}, {}> {
-    render() {
+    public render() {
         return <div/>;
     }
 }
@@ -28,14 +28,13 @@ describe("test react with chai", () => {
     expect(wrapper).to.be.checked;
     expect(wrapper).to.have.className("test");
     expect(wrapper).to.not.have.exactly(1).descendants(Test2);
-  });  
+  });
 });
 
 describe("test chai sinon",() => {
   it("run example", () => {
-    
-    let user = {    
-      setName: function(name){
+    let user = {
+      setName: (name) => {
         this.name = name;
       }
     }
@@ -45,6 +44,5 @@ describe("test chai sinon",() => {
     user.setName("Darth Vader");
     setNameSpy.restore();
     expect(setNameSpy).to.have.been.calledWith("Darth Vader");
-    
   });
-});
+})
