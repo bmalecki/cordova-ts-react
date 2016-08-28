@@ -1,6 +1,6 @@
-import {chai, enzyme, sinon} from './helpers';
+import {chai, enzyme, sinon} from "./helpers";
 import * as React from "react";
-import {Footer} from '../components/Footer';
+import {Footer} from "../components/Footer";
 
 const {assert, expect} = chai;
 const {mount, shallow} = enzyme;
@@ -15,14 +15,14 @@ class Test2 extends React.Component<{}, {}> {
 }
 
 
-describe('Footer', () => {
-  it('should be a function', () => {
+describe("Footer", () => {
+  it("should be a function", () => {
     assert.isFunction(Footer);
   });
 });
 
-describe('test react with chai', () => {
-  it('run exmaple code', () => {
+describe("test react with chai", () => {
+  it("run exmaple code", () => {
     const wrapper = shallow(<Test />);
     expect(wrapper).to.be.not.null;
     expect(wrapper).to.be.checked;
@@ -31,8 +31,8 @@ describe('test react with chai', () => {
   });  
 });
 
-describe('test chai sinon',() => {
-  it('run example', () => {
+describe("test chai sinon",() => {
+  it("run example", () => {
     
     let user = {    
       setName: function(name){
@@ -40,9 +40,9 @@ describe('test chai sinon',() => {
       }
     }
 
-    let setNameSpy = sinon.spy(user, 'setName');
+    let setNameSpy = sinon.spy(user, "setName");
 
-    user.setName('Darth Vader');
+    user.setName("Darth Vader");
     setNameSpy.restore();
     expect(setNameSpy).to.have.been.calledWith("Darth Vader");
     

@@ -1,31 +1,30 @@
 import "babel-polyfill";
 
-import * as React from 'react';
-import {render} from 'react-dom';
-import {Provider} from 'react-redux';
+import * as React from "react";
+import {render} from "react-dom";
+import {Provider} from "react-redux";
 
-import thunk from 'redux-thunk';
-import {Router, Route, hashHistory as _history} from 'react-router';
-import {syncHistoryWithStore, routerMiddleware} from 'react-router-redux';
+import thunk from "redux-thunk";
+import {Route, Router, hashHistory as _history} from "react-router";
+import {syncHistoryWithStore, routerMiddleware} from "react-router-redux";
 
-import configureStore from './store/configureStore';
-import {App} from './components/App';
+import configureStore from "./store/configureStore";
+import {App} from "./components/App";
 
-declare var process : any
+declare var process: any;
 class MyApp {
-  initialize() {
+  public initialize() {
     this.bindEvents();
 
-    require('./style/app.scss');
+    require("./style/app.scss");
 
-    if (process.env.NODE_ENV !== 'production') {
-      require('raw!./index.ejs')
+    if (process.env.NODE_ENV !== "production") {
+      require("raw!./index.ejs");
     }
 
-    //apply middleware in array
+    // apply middleware in array
     const store = configureStore([
-      routerMiddleware(_history), thunk  
-    ]);
+      routerMiddleware(_history), thunk]);
     const history = syncHistoryWithStore(_history, store);
 
     render(
@@ -35,16 +34,16 @@ class MyApp {
           </Route>
         </Router>
       </Provider>,
-      document.getElementById('app')
+      document.getElementById("app")
     );
   }
 
-  bindEvents() {
-    document.addEventListener('deviceready', this.onDeviceReady, false);
+  private bindEvents() {
+    document.addEventListener("deviceready", this.onDeviceReady, false);
   }
 
-  onDeviceReady() {
-    console.log('Ready');
+  private onDeviceReady() {
+    console.log("Ready");
   }
 };
 
