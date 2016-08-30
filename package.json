@@ -7,7 +7,8 @@
     "start": "node ./config/webpack.server.js",
     "test": "karma start ./config/karma.conf.js",
     "build": "rimraf www && webpack --config config/webpack.prod.js --progress --profile --bail",
-    "postinstall": "typings install && cordova prepare"
+    "postinstall": "typings install && cordova prepare",
+    "resources": "node ./config/resources"
   },
   "author": "Bartlomiej Malecki",
   "license": "MIT",
@@ -23,6 +24,7 @@
     "redux-thunk": "^2.1.0"
   },
   "devDependencies": {
+    "async": "^2.0.1",
     "autoprefixer": "^6.4.0",
     "babel-core": "^6.9.0",
     "babel-loader": "^6.2.4",
@@ -41,6 +43,7 @@
     "file-loader": "^0.8.5",
     "html-loader": "^0.4.3",
     "html-webpack-plugin": "^2.15.0",
+    "ionic": "^2.0.0",
     "jasmine-core": "^2.4.1",
     "json-loader": "^0.5.4",
     "karma": "^1.1.1",
