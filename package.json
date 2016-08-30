@@ -7,7 +7,7 @@
     "start": "node ./config/webpack.server.js",
     "test": "karma start ./config/karma.conf.js",
     "build": "rimraf www && webpack --config config/webpack.prod.js --progress --profile --bail",
-    "postinstall": "typings install"
+    "postinstall": "typings install && cordova prepare"
   },
   "author": "Bartlomiej Malecki",
   "license": "MIT",
@@ -33,6 +33,7 @@
     "chai": "^3.5.0",
     "chai-enzyme": "^0.5.0",
     "compression-webpack-plugin": "^0.3.1",
+    "cordova": "^6.3.1",
     "css-loader": "^0.23.1",
     "enzyme": "^2.4.1",
     "express": "^4.13.4",
