@@ -11,7 +11,9 @@ import {syncHistoryWithStore, routerMiddleware} from "react-router-redux";
 import configureStore from "./store/configureStore";
 import {App} from "./components/App";
 
-declare var process: any;
+declare const process: any;
+declare const navigator: {splashscreen: any};
+
 class MyApp {
   public initialize() {
     this.bindEvents();
@@ -39,12 +41,22 @@ class MyApp {
   }
 
   private bindEvents() {
-    document.addEventListener("deviceready", this.onDeviceReady, false);
+    document.addEventListener("deviceready", this.onDeviceReady.bind(this), false);
+  }
+
+  private hideSplashScreen() {
+    if (navigator.splashscreen) {
+      setTimeout(() => {
+        navigator.splashscreen.hide();
+      }, 650);
+    }
   }
 
   private onDeviceReady() {
+    this.hideSplashScreen();
     console.log("Ready");
   }
+
 };
 
 let app = new MyApp();
