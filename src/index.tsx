@@ -12,7 +12,10 @@ import configureStore from "./store/configureStore";
 import {App} from "./components/App";
 
 declare const process: any;
-declare const navigator: {splashscreen: any};
+declare const navigator: {
+  splashscreen: any,
+  Backbutton: any
+};
 
 class MyApp {
   public initialize() {
@@ -41,7 +44,8 @@ class MyApp {
   }
 
   private bindEvents() {
-    document.addEventListener("deviceready", this.onDeviceReady.bind(this), false);
+    document.addEventListener("deviceready", () => this.onDeviceReady(), false);
+    document.addEventListener("backbutton", () => this.onBackbuttonClick(), false);
   }
 
   private hideSplashScreen() {
@@ -55,6 +59,10 @@ class MyApp {
   private onDeviceReady() {
     this.hideSplashScreen();
     console.log("Ready");
+  }
+
+  private onBackbuttonClick() {
+    navigator.Backbutton.goBack();
   }
 
 };
