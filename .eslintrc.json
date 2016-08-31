@@ -1,0 +1,21 @@
+{
+    "extends": "airbnb",
+    "plugins": [
+        "react",
+        "jsx-a11y",
+        "import"
+    ],
+    "rules": {
+        "comma-dangle": ["error", "only-multiline"],
+        "no-underscore-dangle": "off",
+        "keyword-spacing":"off",
+        "quotes": ["error", "double"],
+        "space-before-function-paren": "off",
+        "func-names": "off",
+        "no-restricted-syntax": ["error", "WithStatement"],
+        "guard-for-in": "warn",
+        "import/no-extraneous-dependencies": "off",
+        "object-shorthand": "warn",
+        "no-param-reassign": "off"
+    }
+}

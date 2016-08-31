@@ -3,8 +3,7 @@ import * as React from "react";
 import {Footer} from "../components/Footer";
 
 const {assert, expect} = chai;
-const {mount, shallow} = enzyme;
-
+const {shallow} = enzyme;
 
 const Test = () => <div className="test"/>;
 
@@ -13,7 +12,6 @@ class Test2 extends React.Component<{}, {}> {
         return <div/>;
     }
 }
-
 
 describe("Footer", () => {
   it("should be a function", () => {
@@ -31,13 +29,13 @@ describe("test react with chai", () => {
   });
 });
 
-describe("test chai sinon",() => {
+describe("test chai sinon", () => {
   it("run example", () => {
     let user = {
-      setName: (name) => {
+      setName(name) {
         this.name = name;
       }
-    }
+    };
 
     let setNameSpy = sinon.spy(user, "setName");
 
@@ -45,4 +43,4 @@ describe("test chai sinon",() => {
     setNameSpy.restore();
     expect(setNameSpy).to.have.been.calledWith("Darth Vader");
   });
-})
+});

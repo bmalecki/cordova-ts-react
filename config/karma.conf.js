@@ -1,39 +1,39 @@
-var webpackConfig = require('./webpack.test');
-var helpers = require('./helpers');
+const webpackConfig = require("./webpack.test");
+const helpers = require("./helpers");
 
-module.exports = function (config) {
-  process.env.NODE_ENV = 'testing';
+module.exports = function karmaConf(config) {
+  process.env.NODE_ENV = "testing";
 
-  var _config = {
+  const _config = {
     basePath: helpers.root(),
 
-    frameworks: ['mocha', 'chai'],
+    frameworks: ["mocha", "chai"],
 
     files: [
-      {pattern: './config/karma-test-files.js', watched: false}
+      { pattern: "./config/karma-test-files.js", watched: false }
     ],
 
     preprocessors: {
-      './config/karma-test-files.js': ['webpack', 'sourcemap']
+      "./config/karma-test-files.js": ["webpack", "sourcemap"]
     },
 
     webpack: webpackConfig,
 
     webpackMiddleware: {
-      stats: 'errors-only'
+      stats: "errors-only"
     },
 
     customLaunchers: {
       ChromeSmall: {
-        base: 'Chrome',
-        flags: ['--window-size=300,230']
-        }
+        base: "Chrome",
+        flags: ["--window-size=300,230"]
+      }
     },
 
-    reporters: ['mocha'],
+    reporters: ["mocha"],
 
     mochaReporter: {
-      output: 'autowatch'
+      output: "autowatch"
     },
 
     port: 9876,
@@ -42,9 +42,9 @@ module.exports = function (config) {
     autoWatch: true,
 
     browsers: [
-      'ChromeSmall'
+      "ChromeSmall"
     ],
-    
+
     singleRun: false
   };
 
