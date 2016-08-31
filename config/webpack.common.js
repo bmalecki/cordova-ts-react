@@ -47,12 +47,10 @@ module.exports = {
       },
       {
         test: /\.css$/,
-        exclude: helpers.root("src", "app"),
         loader: ExtractTextPlugin.extract("style", "css?sourceMap")
       },
       {
         test: /\.scss$/,
-        exclude: helpers.root("src", "app"),
         loader: ExtractTextPlugin.extract(
           "style", "css?sourceMap!postcss-loader?sourceMap!sass?sourceMap")
       },
