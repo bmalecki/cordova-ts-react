@@ -1,7 +1,7 @@
-declare var module : any;
-declare var window : {devToolsExtension: Function};
+declare var module: any;
+declare var window: {devToolsExtension: Function};
 
-import { createStore, compose ,applyMiddleware} from "redux";
+import { createStore, compose , applyMiddleware } from "redux";
 import rootReducer from "../reducers";
 
 export default function configureStore(middleware = [], preloadedState) {

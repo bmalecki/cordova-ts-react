@@ -3,7 +3,7 @@ import {incrementCounter} from "../actions/IncrementCounter";
 
 import * as React from "react";
 
-interface IProps{
+interface IProps {
   secondElapsed: number;
   increment: any;
 }
@@ -15,14 +15,14 @@ class SimpleCounter extends React.Component<IProps, {}> {
     super(props);
   }
 
-  public componentDidMount(){
-    this.interval = setInterval(() =>{
+  public componentDidMount() {
+    this.interval = setInterval(() => {
       this.props.increment();
      }, 1000);
 
   }
 
-  public componentWillUnmount(){
+  public componentWillUnmount() {
     clearInterval(this.interval);
   }
 
@@ -35,17 +35,16 @@ class SimpleCounter extends React.Component<IProps, {}> {
   }
 }
 
-
 function mapStateToProps(state) {
   return {
     secondElapsed: state.secondElapsed
   };
 }
 
-function mapDispatchToProps (dispatch){
+function mapDispatchToProps (dispatch) {
   return {
     increment: () => dispatch(incrementCounter())
-  }
+  };
 }
 
 export const Counter =  connect(mapStateToProps, mapDispatchToProps)(SimpleCounter);

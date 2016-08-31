@@ -1,7 +1,6 @@
 import * as React from "react";
 import {Counter} from "../containers/Counter";
 
-
 export const Footer = () => (
   <div>
     <Counter />

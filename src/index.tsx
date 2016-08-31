@@ -19,7 +19,7 @@ declare const navigator: {
 
 class MyApp {
   public initialize() {
-    this.bindEvents();
+    document.addEventListener("deviceready", () => this.onDeviceReady(), false);
 
     require("./style/app.scss");
 
@@ -43,22 +43,18 @@ class MyApp {
     );
   }
 
-  private bindEvents() {
-    document.addEventListener("deviceready", () => this.onDeviceReady(), false);
+  private onDeviceReady() {
+    this.hideSplashScreen();
+    console.log("Ready");
     document.addEventListener("backbutton", () => this.onBackbuttonClick(), false);
   }
 
   private hideSplashScreen() {
     if (navigator.splashscreen) {
       setTimeout(() => {
-        navigator.splashscreen.hide();
-      }, 650);
+          navigator.splashscreen.hide();
+      }, 200);
     }
-  }
-
-  private onDeviceReady() {
-    this.hideSplashScreen();
-    console.log("Ready");
   }
 
   private onBackbuttonClick() {

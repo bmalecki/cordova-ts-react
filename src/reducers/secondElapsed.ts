@@ -7,6 +7,6 @@ const secondElapsed = (state = 0, action) => {
     default:
       return state;
   }
-}
+};
 
 export default secondElapsed;

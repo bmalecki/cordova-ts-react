@@ -1,7 +1,7 @@
 declare var module: any;
 declare const process: {env: {NODE_ENV: String}};
 
-interface IConfigureStore{
+interface IConfigureStore {
   (middleware: Array<Redux.Middleware>, preloadedState ?: any) : Redux.Store<any>;
 }
 
